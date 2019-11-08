@@ -3,6 +3,7 @@
 const feathers = require('@feathersjs/feathers');
 const socketio = require('@feathersjs/socketio');
 const mqtt = require('mqtt');
+const config = require('../Config13318/config.json');
 
 // A messages service that allows to create new
 // and return all existing messages
@@ -58,11 +59,7 @@ app.service('messages').create({
   text: 'Hello world from the server',
 });
 
-let mqttClient = mqtt.connect(
-  'mqtt://ec2-3-15-151-115.us-east-2.compute.amazonaws.com',
-  // 'mqtt://test.mosquitto.org'
-  // 'mqtt://localhost',
-);
+let mqttClient = mqtt.connect(config.MQTT);
 
 mqttClient.on('connect', function() {
   mqttClient.subscribe('Plex13318', function(err) {
