@@ -1,0 +1,28 @@
+{
+  "name": "FeathersChat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brentgroves/FeathersChat.git"
+  },
+  "keywords": [],
+  "author": "Brent Groves <brent.groves@gmail.com> (https://makercountry.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brentgroves/FeathersChat/issues"
+  },
+  "homepage": "https://github.com/brentgroves/FeathersChat#readme",
+  "dependencies": {
+    "@feathersjs/express": "^4.3.10",
+    "@feathersjs/feathers": "^4.3.10",
+    "@feathersjs/socketio": "^4.3.10"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0"
+  }
+}
