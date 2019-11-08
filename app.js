@@ -79,7 +79,7 @@ mqttClient.on('message', function(topic, message) {
   } else {
     p.Server = 'Test';
   }
-  let msg = `${p.TransDate},${p.Part_no},${p.Serial_No},${p.Server},${p.Cycle_Counter_Shift_SL},${p.Quantity},${p.Container_Status}`;
+  let msg = `${p.TransDate},${p.Part_No},${p.Serial_No},${p.Server},${p.Cycle_Counter_Shift_SL},${p.Quantity},${p.Container_Status}`;
   console.log(msg);
   app.service('messages').create({
     text: msg,
