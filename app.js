@@ -73,9 +73,15 @@ mqttClient.on('connect', function() {
 });
 // message is a buffer
 mqttClient.on('message', function(topic, message) {
-  const params = JSON.parse(message.toString()); // payload is a buffer
-  console.log(params);
+  const p = JSON.parse(message.toString()); // payload is a buffer
+  if ('1' == p.ProdServer) {
+    p.Server = 'Production';
+  } else {
+    p.Server = 'Test';
+  }
+  let msg = `${p.TransDate},${p.Part_no},${p.Serial_No},${p.Server},${p.Cycle_Counter_Shift_SL},${p.Quantity},${p.Container_Status}`;
+  console.log(msg);
   app.service('messages').create({
-    text: 'mqtt message',
+    text: msg,
   });
 });
