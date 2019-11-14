@@ -50,7 +50,7 @@ app.publish(data => app.channel('everybody'));
 app
   .listen(3030)
   .on('listening', () =>
-    console.log('Feathers server listening on localhost:3030'),
+    console.log(`Feathers server listening on ${config.WebSocket}`),
   );
 
 // For good measure let's create a message
